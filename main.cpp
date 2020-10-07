@@ -70,14 +70,14 @@ struct queue
 	}
 	void print()
 	{
-		cout << "ID thread	|	number	|	is divided" << endl;
+		cout << "ID потока	|	Число	|	Делится?" << endl;
 		for (int i = 0; i < curr_n; i++)
 		{
 			cout << elements[i].ID << "\t\t\t" << elements[i].number << "\t\t";
 			if (elements[i].isDiv)
-				cout << "Yes" << endl;
+				cout << "Да" << endl;
 			else
-				cout << "No" << endl;
+				cout << "Нет" << endl;
 		}
 	}
 };
@@ -184,9 +184,11 @@ int main()
 
 	n = text.length();
 	A = new int[n];
-	for (int i = 0; i < n; i++)
+  cout<<"Число:"<<endl;
+	for (int i = 0; i < n; i++){
+    cout<<text[i];
 		A[i] = text[i] - '0';
-
+  }
 	cout << endl;
 	//Вводим количество потоков
 	nThread = n / 100 + 1;
@@ -224,9 +226,9 @@ int main()
 	for (int i = 2; i < 11; i++) {
 		printf("%d: ", i);
 		if (isDivided[i])
-			printf("Yes");
+			printf("Да");
 		else
-			printf("No");
+			printf("Нет");
 		printf("\n");
 	}
 	myQueue1.print();
